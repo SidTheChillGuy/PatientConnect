@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // define buttons actions
+        // int float kotlin
         val UserLoginButton: Button = findViewById(R.id.UserLoginbutton)
         val AdminLoginButton: Button = findViewById(R.id.AdminLoginButton)
         val UserLandingButton: Button = findViewById(R.id.temporary_userlanding)
