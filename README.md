@@ -20,3 +20,5 @@ Manage each patient by their CaseID unique per hospital
 6. integrate google meet if cpossible (Not Ongoing)
 7. transalation and localisation (Not Ongoing)
 8. accessibility feature (Not Ongoing)
+9. Doctor search feature (not ongoing)
+10. Payment integration (not ongoing)
