@@ -13,7 +13,13 @@
         android:theme="@style/Theme.PatientConnect"
         tools:targetApi="31">
         <activity
-            android:name=".User_Login_Page"
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserLoginActivity"
             android:exported="false" />
         <activity
             android:name=".UserLandingPage"

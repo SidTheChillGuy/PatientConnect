@@ -1,46 +1,37 @@
 package com.epics.patientconnect
-
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import android.widget.Button
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.WelcomeScreen)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
-        // define buttons actions
-        // int float kotlin
-        val UserLoginButton: Button = findViewById(R.id.UserLoginbutton)
-        val AdminLoginButton: Button = findViewById(R.id.AdminLoginButton)
-        val UserLandingButton: Button = findViewById(R.id.temporary_userlanding)
+        // Link buttons
+        val userLoginButton: Button = findViewById(R.id.user_login)
+        val adminLoginButton: Button = findViewById(R.id.admin_login)
+        val signUpButton: Button = findViewById(R.id.sign_up)
 
-        UserLoginButton.setOnClickListener {
-            Toast.makeText(this, "User Login Clicked", Toast.LENGTH_LONG).show()
-        }
-
-        AdminLoginButton.setOnClickListener {
-            Toast.makeText(this, "Admin Login Clicked", Toast.LENGTH_LONG).show()
-        }
-
-        UserLandingButton.setOnClickListener{
-            val intent = Intent(this, UserLandingPage::class.java)
+        // Set click listeners
+        userLoginButton.setOnClickListener {
+            // Navigate to User Login Activity
+            val intent = Intent(this, UserLoginActivity::class.java)
             startActivity(intent)
         }
 
+        adminLoginButton.setOnClickListener {
+            // Navigate to Admin Login Activity
+            val intent = Intent(this, AdminLoginActivity::class.java)
+            startActivity(intent)
+        }
 
-
-
+        signUpButton.setOnClickListener {
+            // Navigate to Sign Up Activity
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
