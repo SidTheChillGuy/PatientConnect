@@ -9,8 +9,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import javax.crypto.SecretKey
 
-// import javax.crypto.SecretKey
-
 class AdminLoginActivity : AppCompatActivity() {
 
     private lateinit var usernameEditText: EditText
