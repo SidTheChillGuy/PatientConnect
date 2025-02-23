@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         signUpButton.setOnClickListener {
             // Navigate to Sign Up Activity
-            val intent = Intent(this, UserLandingPage::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
     }

@@ -7,7 +7,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-// import javax.crypto.SecretKey
+import javax.crypto.SecretKey
 
 class AdminLoginActivity : AppCompatActivity() {
 
@@ -50,18 +50,20 @@ class AdminLoginActivity : AppCompatActivity() {
         // Here you would typically validate the username and password
         // For demonstration, let's assume a simple check
         if (username.isEmpty() || password.isEmpty() || secretkey.isEmpty()) {
-            Toast.makeText(this, "Please enter both username, password and SecretKey", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please enter username, password and SecretKey correctly!", Toast.LENGTH_LONG).show()
             return
         }
 
         // TODO: Implement actual authentication logic (e.g., API call)
+        if(username=="admin" && password=="admin" && secretkey=="secret") {
+            // For demonstration, let's assume successful login
+            Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
 
-        // For demonstration, let's assume successful login
-        Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
-
-        // Navigate to the main app screen after successful login
-        val intent = Intent(this, UserLandingPage::class.java) // Replace with your main app activity
-        startActivity(intent)
+            // Navigate to the main app screen after successful login
+            val intent =
+                Intent(this, UserLandingPage::class.java) // Replace with your main app activity
+            startActivity(intent)
+        }
         finish() // Close the login activity
     }
 }

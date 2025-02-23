@@ -52,11 +52,14 @@ class UserLoginActivity : AppCompatActivity() {
         // TODO: Implement actual authentication logic (e.g., API call)
 
         // For demonstration, let's assume successful login
-        Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
+        if (username=="admintest" && password=="admintest") {
+            Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
 
-        // Navigate to the main app screen after successful login
-        val intent = Intent(this, UserLandingPage::class.java) // Replace with your main app activity
-        startActivity(intent)
+            // Navigate to the main app screen after successful login
+            val intent =
+                Intent(this, UserLandingPage::class.java) // Replace with your main app activity
+            startActivity(intent)
+        }
         finish() // Close the login activity
     }
 }
