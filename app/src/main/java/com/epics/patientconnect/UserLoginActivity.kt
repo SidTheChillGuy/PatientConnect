@@ -57,7 +57,7 @@ class UserLoginActivity : AppCompatActivity() {
 
             // Navigate to the main app screen after successful login
             val intent =
-                Intent(this, UserLandingPage::class.java) // Replace with your main app activity
+                Intent(this, LandingUserPage::class.java) // Replace with your main app activity
             startActivity(intent)
         }
         finish() // Close the login activity

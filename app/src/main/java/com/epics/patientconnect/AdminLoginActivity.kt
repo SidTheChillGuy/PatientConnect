@@ -7,7 +7,6 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import javax.crypto.SecretKey
 
 class AdminLoginActivity : AppCompatActivity() {
 
@@ -61,7 +60,7 @@ class AdminLoginActivity : AppCompatActivity() {
 
             // Navigate to the main app screen after successful login
             val intent =
-                Intent(this, UserLandingPage::class.java) // Replace with your main app activity
+                Intent(this, LandingAdminPage::class.java) // Replace with your main app activity
             startActivity(intent)
         }
         finish() // Close the login activity
