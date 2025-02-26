@@ -4,14 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="150dp"
+
+    android:background="@drawable/gradient_background"
     android:padding="16dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Admin  Login"
+        android:text="Admin Login"
+        android:textColor="#ffffff"
         android:textSize="24sp"
+        android:layout_marginTop="150dp"
         android:layout_gravity="center"
         android:layout_marginBottom="24dp" />
 
@@ -19,12 +22,14 @@
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="#ffffff"
         android:hint="Username"
         android:inputType="text" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
+        android:textColorHint="#ffffff"
         android:layout_height="wrap_content"
         android:hint="Password"
         android:inputType="textPassword" />
@@ -33,6 +38,7 @@
         android:id="@+id/SecretKey"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="#ffffff"
         android:hint="SecretKey"
         android:inputType="textPassword" />
 
@@ -41,6 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
+        android:background="@drawable/rounded_rectangle"
         android:layout_marginTop="16dp" />
 
     <TextView
@@ -48,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Not an Administrator?"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@android:color/holo_green_light"
         android:layout_marginTop="16dp"
         android:clickable="true"
         android:focusable="true" />

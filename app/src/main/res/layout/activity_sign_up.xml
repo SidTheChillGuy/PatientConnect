@@ -4,19 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="150dp"
+    android:background="@drawable/gradient_background"
     android:padding="16dp">
 
     <TextView
         android:layout_width="wrap_content"
+        android:layout_marginTop="150dp"
         android:layout_height="wrap_content"
         android:text="Sign Up"
+        android:textColor="#ffffff"
         android:textSize="24sp"
         android:layout_gravity="center"
         android:layout_marginBottom="24dp" />
 
     <EditText
         android:id="@+id/username"
+        android:textColorHint="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter an Username"
@@ -24,6 +27,7 @@
 
     <EditText
         android:id="@+id/usermailid"
+        android:textColorHint="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Email ID"
@@ -31,6 +35,7 @@
 
     <EditText
         android:id="@+id/password"
+        android:textColorHint="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Create a password"
@@ -40,6 +45,7 @@
         android:id="@+id/passwordconfirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="#ffffff"
         android:hint="Confirm the password"
         android:inputType="textPassword" />
 

@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LandingAdminPage">
+    android:background="@drawable/gradient_background"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/adminlandingwelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Administrator"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#D9F4B9"
+        android:layout_marginTop="170dp"
+        android:layout_gravity="center"
+        android:paddingBottom="124dp"/>
+
+    <Button
+        android:id="@+id/editmedicalhistbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="#FF4081"
+        android:text="Edit Patient's History"
+        android:textSize="18sp"
+        android:padding="20dp"
+        android:layout_marginBottom="16dp"/>
+
+
+
+</LinearLayout>
