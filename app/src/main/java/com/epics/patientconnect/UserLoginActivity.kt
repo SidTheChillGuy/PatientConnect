@@ -2,10 +2,9 @@ package com.epics.patientconnect
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.text.InputType
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 class UserLoginActivity : AppCompatActivity() {
@@ -14,6 +13,9 @@ class UserLoginActivity : AppCompatActivity() {
     private lateinit var passwordEditText: EditText
     private lateinit var loginButton: Button
     private lateinit var signupLink: TextView
+    private lateinit var togglePasswordVisibility: ImageView
+    private lateinit var loadingProgress: ProgressBar
+    private var isPasswordVisible = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,42 +26,68 @@ class UserLoginActivity : AppCompatActivity() {
         passwordEditText = findViewById(R.id.password)
         loginButton = findViewById(R.id.login_button)
         signupLink = findViewById(R.id.signup_link)
+        togglePasswordVisibility = findViewById(R.id.toggle_password_visibility)
+        loadingProgress = findViewById(R.id.loading_progress)
 
-        // Set click listener for the login button
+        // Login Button Click
         loginButton.setOnClickListener {
             performLogin()
         }
 
-        // Set click listener for the signup link
+        // Signup Link Click
         signupLink.setOnClickListener {
-            // Navigate to Sign Up Activity
-            val intent = Intent(this, SignUpActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, SignUpActivity::class.java))
+        }
+
+        // Password Toggle Click
+        togglePasswordVisibility.setOnClickListener {
+            togglePassword()
         }
     }
 
     private fun performLogin() {
-        val username = usernameEditText.text.toString()
-        val password = passwordEditText.text.toString()
+        val username = usernameEditText.text.toString().trim()
+        val password = passwordEditText.text.toString().trim()
 
-        // Here you would typically validate the username and password
-        // For demonstration, let's assume a simple check
         if (username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Please enter both username and password", Toast.LENGTH_SHORT).show()
+            showToast("Please enter both username and password")
             return
         }
 
-        // TODO: Implement actual authentication logic (e.g., API call)
+        // Show Progress Bar & Disable Button
+        loadingProgress.visibility = View.VISIBLE
+        loginButton.isEnabled = false
 
-        // For demonstration, let's assume successful login
-        if (username=="admintest" && password=="admintest") {
-            Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
+        usernameEditText.postDelayed({
+            // Hide Progress Bar & Enable Button
+            loadingProgress.visibility = View.GONE
+            loginButton.isEnabled = true
 
-            // Navigate to the main app screen after successful login
-            val intent =
-                Intent(this, LandingUserPage::class.java)
-            startActivity(intent)
+            if (username == "admintest" && password == "admintest") {
+                showToast("Login Successful!")
+                startActivity(Intent(this, LandingUserPage::class.java))
+                finish()
+            } else {
+                showToast("Invalid credentials, please try again!")
+            }
+        }, 1500) // Simulated API delay
+    }
+
+    private fun togglePassword() {
+        isPasswordVisible = !isPasswordVisible
+        if (isPasswordVisible) {
+            passwordEditText.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            togglePasswordVisibility.setImageResource(R.drawable.ic_eye_open) // Now correctly referenced
+        } else {
+            passwordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            togglePasswordVisibility.setImageResource(R.drawable.ic_eye_closed) // Now correctly referenced
         }
-        finish() // Close the login activity
+        passwordEditText.setSelection(passwordEditText.text.length) // Maintain cursor position
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
+
+

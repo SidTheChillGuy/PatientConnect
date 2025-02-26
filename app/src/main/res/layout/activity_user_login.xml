@@ -3,46 +3,95 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
-    android:layout_marginTop="150dp"
-    android:padding="16dp">
+    android:padding="24dp"
+    android:background="@drawable/gradient_background">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+            android:src="@drawable/ic_launcher_foreground"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="App Logo" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User  Login"
-        android:textSize="24sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="24dp" />
+        android:layout_marginBottom="24dp"
+        android:text="Welcome Back!"
+        android:textColor="@android:color/white"
+        android:textSize="26sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_input"
         android:hint="Username"
-        android:inputType="text" />
+        android:padding="12dp"
+        android:layout_marginVertical="16dp"
+        android:textColor="@android:color/black" /><!--        android:drawableStart="@drawable/ic_user"-->
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:background="@drawable/rounded_input"
+android:padding="4dp">
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="50dp"
         android:hint="Password"
-        android:inputType="textPassword" />
+        android:padding="12dp"
+        android:layout_marginVertical="5dp"
+        android:textColor="@android:color/black"
+        android:inputType="textPassword"/>
+<!--        android:drawableStart="@drawable/ic_lock" />-->
+
+    <!-- Login Button -->
+
+    <!-- Sign Up Link -->
+
+    <ProgressBar
+    android:id="@+id/loading_progress"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    android:layout_marginTop="10dp" />
+
+    <ImageView
+        android:id="@+id/toggle_password_visibility"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="8dp"
+
+        android:contentDescription="Toggle Password Visibility"/><!--        android:src="@drawable/ic_eye_closed"-->
+</LinearLayout>
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_button"
         android:text="Login"
-        android:layout_marginTop="16dp" />
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/signup_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="30dp"
         android:text="Don't have an account? Sign Up"
-        android:textColor="@android:color/holo_blue_dark"
-        android:layout_marginTop="16dp"
-        android:clickable="true"
-        android:focusable="true" />
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 </LinearLayout>
